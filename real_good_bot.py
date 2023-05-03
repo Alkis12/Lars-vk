@@ -5,10 +5,13 @@ from ready_function import *
 import random
 import json
 
-chit = False
-GROUP_ID = 201055044
-TOKEN = 'd035b43482561f2e51bd4db71c6bd75efb21435118dc0695b9e467a8f1a8ba5eef53595cc8eca4650e85e'
 name = 'ларс'
+chit = False
+with open("../data.json", "r", encoding='utf8') as data:
+    inf = json.load(data)[name]
+GROUP_ID = inf["GROUP_ID"]
+TOKEN = inf["TOKEN"]
+print(GROUP_ID, TOKEN)
 with open("keys.json", "r", encoding='utf8') as re:
     keys = json.load(re)
 
